@@ -20,10 +20,10 @@ class Book {
 
 function addBook(book = new Book("RNG book", "John Doe", Math.round(Math.random() * 1337))) {
 	bookLibrary.push(book);
-	update();
+	reDraw();
 }
 
-function update() {
+function reDraw() {
 	const bookShelf = document.querySelector("#bookshelf");
 	bookShelf.textContent = "";
 
