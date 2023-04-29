@@ -1,85 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="./script.js"></script>
-    <script src="./scripts/pop-up.js" defer</script>
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="grid-container">
-      <header class="header">
-        <div class="header__search">Search...</div>
-        <button class="add-book-btn" data-modal="modalOne">Add a Book</button>
-      </header>
-      <aside class="sidebar">
-        <ul class="sidebar__list">
-            <li class="sidebar__list-item">Link 1</li>
-            <li class="sidebar__list-item">Link 2</li>
-            <li class="sidebar__list-item">Link 3</li>
-            <li class="sidebar__list-item">Link 4</li>
-        </ul>
-      </aside>
-      <main class="main">
-        <div class="main-header">
-            <div class="main-header__heading">Welcome To The Library</div>
-            <div class="main-header__recent">New and Noteworthy Books</div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="./script.js"></script>
+  <script src="./scripts/pop-up.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="grid-container">
+    <header class="header">
+      <div class="header__search">Search...</div>
+      <button class="add-book-btn" data-modal="modalOne">Add a Book</button>
+    </header>
+    <aside class="sidebar">
+      <ul class="sidebar__list">
+        <li class="sidebar__list-item">Link 1</li>
+        <li class="sidebar__list-item">Link 2</li>
+        <li class="sidebar__list-item">Link 3</li>
+        <li class="sidebar__list-item">Link 4</li>
+      </ul>
+    </aside>
+    <main class="main">
+      <div class="main-header">
+        <div class="main-header__heading">Welcome To The Library</div>
+        <div class="main-header__recent">New and Noteworthy Books</div>
+      </div>
+      <div id="bookshelf">
+        <div class="books">
+          <div class="book__cover">Image Here Maybe</div>
+          <div class="book__info">Author, Title, Pages, Read</div>
         </div>
-        <div class="bookshelf">
-            <div class="books">
-                <div class="book__cover">Image Here Maybe</div>
-                <div class="book__info">Author, Title, Pages, Read</div>
-            </div>
-            <div class="books">
-                <div class="book__cover">Image Here Maybe</div>
-                <div class="book__info">Author, Title, Pages, Read</div>
-            </div>
-            <div class="books">
-                <div class="book__cover">Image Here Maybe</div>
-                <div class="book__info">Author, Title, Pages, Read</div>
-            </div>
-            <div class="books">
-                <div class="book__cover">Image Here Maybe</div>
-                <div class="book__info">Author, Title, Pages, Read</div>
-            </div>
-            <div class="books">
-                <div class="book__cover">Image Here Maybe</div>
-                <div class="book__info">Author, Title, Pages, Read</div>
-            </div>
-           
+        <div class="books">
+          <div class="book__cover">Image Here Maybe</div>
+          <div class="book__info">Author, Title, Pages, Read</div>
         </div>
-        <div id="modalOne" class="modal">
-          <div class="modal-content">
-            <div class="add-new-book-form">
-              <a class="close">&times;</a>
-              <form action="/">
-                <h2>Add New Book</h2>
-                <div class="form-input">
-                  <input type="text" name="author" placeholder="Author" />
-                  <input type="text" name="title" placeholder="Book Title" />
-                  <input type="number" name="pages" placeholder="Number Of Pages" />
-                  <label for="read">Have you read this book</label>
-                  <select name="read" id="read">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                  </select>
-                </div>
-                <button type="submit" href="/">Submit</button>
-                <button type="clear" href="/">Clear</button>
-              </form>
-            </div>
+        <div class="books">
+          <div class="book__cover">Image Here Maybe</div>
+          <div class="book__info">Author, Title, Pages, Read</div>
+        </div>
+        <div class="books">
+          <div class="book__cover">Image Here Maybe</div>
+          <div class="book__info">Author, Title, Pages, Read</div>
+        </div>
+        <div class="books">
+          <div class="book__cover">Image Here Maybe</div>
+          <div class="book__info">Author, Title, Pages, Read</div>
+        </div>
+
+      </div>
+      <div id="modalOne" class="modal">
+        <div class="modal-content">
+          <div class="add-new-book-form">
+            <a class="close">&times;</a>
+            <form action="/">
+              <h2>Add New Book</h2>
+              <div class="form-input">
+                <input type="text" name="author" placeholder="Author" />
+                <input type="text" name="title" placeholder="Book Title" />
+                <input type="number" name="pages" placeholder="Number Of Pages" />
+                <label for="read">Have you read this book</label>
+                <select name="read" id="read">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <button type="submit" href="/">Submit</button>
+              <button type="clear" href="/">Clear</button>
+            </form>
           </div>
         </div>
-        
-        
-      </main>
-      <footer class="footer">
-        <div class="footer__copyright">&copy; 2023 Brainnest Team Library</div>
-        <div class="footer__signature">Premek, Maria, Chadi and Ben</div>
-      </footer>
-    </div>
-  </body>
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="footer__copyright">&copy; 2023 Brainnest Team Library</div>
+      <div class="footer__signature">Premek, Maria, Chadi and Ben</div>
+    </footer>
+  </div>
+</body>
+
 </html>
