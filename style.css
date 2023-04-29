@@ -115,7 +115,7 @@ h6, p {
   color: gray;
 }
 
-.bookshelf {
+#bookshelf {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
