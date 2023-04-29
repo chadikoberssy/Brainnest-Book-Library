@@ -18,11 +18,6 @@ class Book {
 	}
 }
 
-function addBook(book = new Book("RNG book", "John Doe", Math.round(Math.random() * 1337))) {
-	bookLibrary.push(book);
-	reDraw();
-}
-
 function reDraw() {
 	const bookShelf = document.querySelector("#bookshelf");
 	bookShelf.textContent = "";
@@ -59,4 +54,9 @@ function reDraw() {
 		bookDelete.appendChild(deleteSymbol);
 		book.appendChild(bookDelete);
 	});
+}
+
+function addBook(book = new Book("RNG book", "John Doe", Math.round(Math.random() * 1337))) {
+	bookLibrary.push(book);
+	reDraw();
 }
