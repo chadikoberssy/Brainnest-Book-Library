@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,52 +9,84 @@
   <script src="./scripts/pop-up.js" defer></script>
   <title>Library app</title>
 </head>
-
 <body>
   <div class="grid-container">
-    <header class="header">
-      <div class="header__search">Search...</div>
-      <button class="add-book-btn" data-modal="modalOne">Add a Book</button>
-    </header>
+
     <aside class="sidebar">
-      <ul class="sidebar__list">
-        <li class="sidebar__list-item">Link 1</li>
-        <li class="sidebar__list-item">Link 2</li>
-        <li class="sidebar__list-item">Link 3</li>
-        <li class="sidebar__list-item">Link 4</li>
-      </ul>
+      <h3>Welcome to our online library!</h3>
+      <button class="add-book-btn" data-modal="modalOne">Add a Book</button>
     </aside>
+
     <main class="main">
-      <div class="main-header">
-        <div class="main-header__heading">Welcome To The Library</div>
-        <div class="main-header__recent">New and Noteworthy Books</div>
-      </div>
 
-      <div id="bookshelf">
-        <div class="books">
-          <td>RNG book</td>
-          <td>John Doe</td>
-          <td>493</td>
-          <td><a class="not-read">Did NOT read</a></td>
-          <td><a class="trash">X</a></td>
+      <section class="main-header">
+        <h2>Online library log</h2>
+        <div class="main-header-counts">
+          <p>Total book count: <span>0</span></p>
+          <p>Books read: <span>0</span></p>
+          <p>Books need to read: <span>0</span></p>
         </div>
-        <div class="books">
-          <td>RNG book</td>
-          <td>John Doe</td>
-          <td>358</td>
-          <td><a class="read">Did read</a></td>
-          <td><a class="trash">X</a></td>
-        </div>
-        <div class="books">
-          <td>Test book</td>
-          <td>Tester boi</td>
-          <td>569</td>
-          <td><a class="not-read">Did NOT read</a></td>
-          <td><a class="trash">X</a></td>
-        </div>
-      </div>
+      </section>
 
-      <div id="modalOne" class="modal">
+      <section id="bookshelf">
+      <table class="bookshelf-table">
+        <thead class="book-header">
+          <tr class="book-header-row">
+            <th>RNG book</td>
+          </tr>
+        </thead>
+        <tbody class="book-body">
+          <tr class="book-body-row-author"><td>John Doe</td></tr>
+          <tr class="book-body-row-pages"><td>493</td></tr>
+          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
+          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
+        </tbody>
+      </table>
+
+      <table class="bookshelf-table">
+        <thead class="book-header">
+          <tr class="book-header-row">
+            <th>RNG book</td>
+          </tr>
+        </thead>
+        <tbody class="book-body">
+          <tr class="book-body-row-author"><td>John Doe</td></tr>
+          <tr class="book-body-row-pages"><td>493</td></tr>
+          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
+          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
+        </tbody>
+      </table>
+
+      <table class="bookshelf-table">
+        <thead class="book-header">
+          <tr class="book-header-row">
+            <th>RNG book</td>
+          </tr>
+        </thead>
+        <tbody class="book-body">
+          <tr class="book-body-row-author"><td>John Doe</td></tr>
+          <tr class="book-body-row-pages"><td>493</td></tr>
+          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
+          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
+        </tbody>
+      </table>
+
+      <table class="bookshelf-table">
+        <thead class="book-header">
+          <tr class="book-header-row">
+            <th>RNG book</td>
+          </tr>
+        </thead>
+        <tbody class="book-body">
+          <tr class="book-body-row-author"><td>John Doe</td></tr>
+          <tr class="book-body-row-pages"><td>493</td></tr>
+          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
+          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
+        </tbody>
+      </table>
+      </section>
+
+      <section id="modalOne" class="modal">
         <div class="modal-content">
           <div class="add-new-book-form">
             <a class="close">&times;</a>
@@ -76,14 +107,13 @@
             </form>
           </div>
         </div>
-      </div>
-
+      </section>
     </main>
+
     <footer class="footer">
       <div class="footer__copyright">&copy; 2023 Brainnest Team Library</div>
       <div class="footer__signature">Premek, Maria, Chadi and Ben</div>
     </footer>
   </div>
 </body>
-
 </html>
