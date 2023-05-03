@@ -21,7 +21,11 @@ window.onclick = function (event) {
 function submitBook(event) {
 	event.preventDefault();
 	const form = new FormData(document.forms.bookForm);
-	addBook(form.get("title"), form.get("author"), form.get("pages"), form.get("read") === "true");
+	let data = { n: form.get("title"), a: form.get("author"), p: form.get("pages") };
+	if (data.n == "") delete data.n;
+	if (data.a == "") delete data.a;
+	if (data.p == "") delete data.p;
+	addBook(data.n, data.a, data.p, form.get("read") === "true");
 	event.target.reset();
 }
 document.getElementById("bookForm").addEventListener("submit", submitBook);
