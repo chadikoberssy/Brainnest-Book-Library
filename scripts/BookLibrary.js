@@ -22,34 +22,36 @@ function reDraw() {
 	const bookShelf = document.querySelector("#bookshelf>tbody");
 	bookShelf.textContent = "";
 
-	bookLibrary.forEach((i) => {
+	bookLibrary.forEach((b, i) => {
 		const book = document.createElement("tr");
 		book.classList.add("book");
 		bookShelf.appendChild(book);
 
 		const bookTitle = document.createElement("td");
-		bookTitle.textContent = i.name;
+		bookTitle.textContent = b.name;
 		book.appendChild(bookTitle);
 
 		const bookAuthor = document.createElement("td");
-		bookAuthor.textContent = i.author;
+		bookAuthor.textContent = b.author;
 		book.appendChild(bookAuthor);
 
 		const bookPages = document.createElement("td");
-		bookPages.textContent = i.pageCount;
+		bookPages.textContent = b.pageCount;
 		book.appendChild(bookPages);
 
-		const statusSymbol = document.createElement("button");
-		statusSymbol.classList.add((i.read ? "" : "not-") + "read");
-		statusSymbol.innerText = (i.read ? "Did" : "Did NOT") + " read";
+		const statusToggle = document.createElement("button");
+		statusToggle.classList.add((b.read ? "" : "not-") + "read");
+		statusToggle.innerText = (b.read ? "Did" : "Did NOT") + " read";
+		statusToggle.onclick = () => { bookLibrary[i].toggleRead(); reDraw(); };
 		const bookStatus = document.createElement("td");
-		bookStatus.appendChild(statusSymbol);
+		bookStatus.appendChild(statusToggle);
 		book.appendChild(bookStatus);
 
 		// Remove "book" button
 		const deleteSymbol = document.createElement("button");
 		deleteSymbol.classList.add("trash");
 		deleteSymbol.innerText = "X";
+		deleteSymbol.onclick = () => { bookLibrary.splice(i, 1); reDraw(); };
 		const bookDelete = document.createElement("td");
 		bookDelete.appendChild(deleteSymbol);
 		book.appendChild(bookDelete);
