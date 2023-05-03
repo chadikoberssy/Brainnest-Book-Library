@@ -47,7 +47,6 @@ function reDraw() {
 		bookStatus.appendChild(statusToggle);
 		book.appendChild(bookStatus);
 
-		// Remove "book" button
 		const deleteSymbol = document.createElement("button");
 		deleteSymbol.classList.add("trash");
 		deleteSymbol.innerText = "X";
