@@ -1,123 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="./scripts/BookLibrary.js"></script>
-  <script src="./scripts/pop-up.js" defer></script>
-  <title>Library app</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="./scripts/BookLibrary.js"></script>
+	<script src="./scripts/pop-up.js" defer></script>
+	<title>Library app</title>
 </head>
+
 <body>
-  <div class="grid-container">
+	<div class="grid-container">
 
-    <header>
-      <h1>For the love of...Books</h1>
-    </header>
+		<header>
+			<h1>For the love of...Books</h1>
+		</header>
 
-    <aside class="sidebar">
-      <h3>Welcome to our online library!</h3>
-      <button class="add-book-btn" data-modal="modalOne">Add a Book</button>
-    </aside>
+		<aside class="sidebar">
+			<h3>Welcome to our online library!</h3>
+			<button class="add-book-btn" data-modal="modalOne">Add a Book</button>
+		</aside>
 
-    <main class="main">
+		<main class="main">
 
-      <section class="main-header">
-        <h2>Online library log</h2>
-        <div class="main-header-counts">
-          <p>Total book count: <span>0</span></p>
-          <p>Books read: <span>0</span></p>
-          <p>Books need to read: <span>0</span></p>
-        </div>
-      </section>
+			<section class="main-header">
+				<h2>Online library log</h2>
+				<div class="main-header-counts">
+					<p>Total book count: <span>0</span></p>
+					<p>Books read: <span>0</span></p>
+					<p>Books need to read: <span>0</span></p>
+				</div>
+			</section>
 
-      <section id="bookshelf">
-      <table class="bookshelf-table">
-        <thead class="book-header">
-          <tr class="book-header-row">
-            <th>RNG book</td>
-          </tr>
-        </thead>
-        <tbody class="book-body">
-          <tr class="book-body-row-author"><td>John Doe</td></tr>
-          <tr class="book-body-row-pages"><td>493</td></tr>
-          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
-          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
-        </tbody>
-      </table>
+			<table id="bookshelf">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Pages</th>
+						<th>Status</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="book">
+						<td>RNG book</td>
+						<td>John Doe</td>
+						<td>493</td>
+						<td><button class="not-read">Did NOT read</button></td>
+						<td><button class="trash">X</button></td>
+					</tr>
+					<tr class="book">
+						<td>RNG book</td>
+						<td>John Doe</td>
+						<td>358</td>
+						<td><button class="read">Did read</button></td>
+						<td><button class="trash">X</button></td>
+					</tr>
+					<tr class="book">
+						<td>Test book</td>
+						<td>Tester boi</td>
+						<td>569</td>
+						<td><button class="not-read">Did NOT read</button></td>
+						<td><button class="trash">X</button></td>
+					</tr>
+				</tbody>
+			</table>
 
-      <table class="bookshelf-table">
-        <thead class="book-header">
-          <tr class="book-header-row">
-            <th>RNG book</td>
-          </tr>
-        </thead>
-        <tbody class="book-body">
-          <tr class="book-body-row-author"><td>John Doe</td></tr>
-          <tr class="book-body-row-pages"><td>493</td></tr>
-          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
-          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
-        </tbody>
-      </table>
+			<section id="modalOne" class="modal">
+				<div class="modal-content">
+					<div class="add-new-book-form">
+						<a class="close">&times;</a>
+						<form action="/">
+							<h2>Add New Book</h2>
+							<div class="form-input">
+								<input type="text" name="author" placeholder="Author" />
+								<input type="text" name="title" placeholder="Book Title" />
+								<input type="number" name="pages" placeholder="Number Of Pages" />
+								<label for="read">Have you read this book</label>
+								<select name="read" id="read">
+									<option value="yes">Yes</option>
+									<option value="no">No</option>
+								</select>
+							</div>
+							<button type="submit" href="/">Submit</button>
+							<button type="clear" href="/">Clear</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
 
-      <table class="bookshelf-table">
-        <thead class="book-header">
-          <tr class="book-header-row">
-            <th>RNG book</td>
-          </tr>
-        </thead>
-        <tbody class="book-body">
-          <tr class="book-body-row-author"><td>John Doe</td></tr>
-          <tr class="book-body-row-pages"><td>493</td></tr>
-          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
-          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
-        </tbody>
-      </table>
-
-      <table class="bookshelf-table">
-        <thead class="book-header">
-          <tr class="book-header-row">
-            <th>RNG book</td>
-          </tr>
-        </thead>
-        <tbody class="book-body">
-          <tr class="book-body-row-author"><td>John Doe</td></tr>
-          <tr class="book-body-row-pages"><td>493</td></tr>
-          <tr class="book-body-row-status"><td><button class="not-read">Did NOT read</button></td></tr>
-          <tr class="book-body-row-trash"><td><button class="trash">X</button></td></tr>          
-        </tbody>
-      </table>
-      </section>
-
-      <section id="modalOne" class="modal">
-        <div class="modal-content">
-          <div class="add-new-book-form">
-            <a class="close">&times;</a>
-            <form action="/">
-              <h2>Add New Book</h2>
-              <div class="form-input">
-                <input type="text" name="author" placeholder="Author" />
-                <input type="text" name="title" placeholder="Book Title" />
-                <input type="number" name="pages" placeholder="Number Of Pages" />
-                <label for="read">Have you read this book</label>
-                <select name="read" id="read">
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-              </div>
-              <button type="submit" href="/">Submit</button>
-              <button type="clear" href="/">Clear</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__copyright">&copy; 2023 Brainnest Team Library</div>
-      <div class="footer__signature">Premek, Maria, Chadi and Ben</div>
-    </footer>
-  </div>
+		<footer class="footer">
+			<div class="footer__copyright">&copy; 2023 Brainnest Team Library</div>
+			<div class="footer__signature">Premek, Maria, Chadi and Ben</div>
+		</footer>
+	</div>
 </body>
+
 </html>

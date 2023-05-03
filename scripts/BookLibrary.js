@@ -19,76 +19,40 @@ class Book {
 }
 
 function reDraw() {
-	const bookShelf = document.querySelector("#bookshelf");
+	const bookShelf = document.querySelector("#bookshelf>tbody");
 	bookShelf.textContent = "";
 
 	bookLibrary.forEach((i) => {
-		// WHOLE BOOK CREATION
-		const book = document.createElement("table");
-		book.classList.add("bookshelf-table");
+		const book = document.createElement("tr");
+		book.classList.add("book");
 		bookShelf.appendChild(book);
 
-		// BOOK HEADER CREATION
-		const tableHeader = document.createElement("thead");
-		tableHeader.classList.add("book-header");
-		book.appendChild(tableHeader);
-
-		const tableHeaderRow = document.createElement("tr");
-		tableHeaderRow.classList.add("book-header-row");
-		tableHeader.appendChild(tableHeaderRow);
-
-		const bookTitle = document.createElement("th");
+		const bookTitle = document.createElement("td");
 		bookTitle.textContent = i.name;
-		tableHeaderRow.appendChild(bookTitle);
-
-		// BOOK BODY CREATION
-		const tableBody = document.createElement("tbody");
-		tableBody.classList.add("book-body");
-		book.appendChild(tableBody);
-
-		// BOOK BODY AUTHOR SECTION CREATION
-		const tableBodyRowAuthor = document.createElement("tr");
-		tableBodyRowAuthor.classList.add("book-body-row-author");
-		tableBody.appendChild(tableBodyRowAuthor);
+		book.appendChild(bookTitle);
 
 		const bookAuthor = document.createElement("td");
 		bookAuthor.textContent = i.author;
-		tableBodyRowAuthor.appendChild(bookAuthor);
-
-		// BOOK BODY PAGES SECTION CREATION
-		const tableBodyRowPages = document.createElement("tr");
-		tableBodyRowPages.classList.add("book-body-row-pages");
-		tableBody.appendChild(tableBodyRowPages);
+		book.appendChild(bookAuthor);
 
 		const bookPages = document.createElement("td");
 		bookPages.textContent = i.pageCount;
-		tableBodyRowPages.appendChild(bookPages);
-
-		// BOOK BODY STATUS SECTION CREATION
-		const tableBodyRowStatus = document.createElement("tr");
-		tableBodyRowStatus.classList.add("book-body-row-status");
-		tableBody.appendChild(tableBodyRowStatus);
+		book.appendChild(bookPages);
 
 		const statusSymbol = document.createElement("button");
-		statusSymbol.classList.add(i.read ? "" : "not-" + "read");
-		statusSymbol.innerText = i.read ? "Did" : "Did NOT" + " read";
+		statusSymbol.classList.add((i.read ? "" : "not-") + "read");
+		statusSymbol.innerText = (i.read ? "Did" : "Did NOT") + " read";
+		const bookStatus = document.createElement("td");
+		bookStatus.appendChild(statusSymbol);
+		book.appendChild(bookStatus);
 
-		const tableBodyRowStatusData = document.createElement("td");
-		tableBodyRowStatusData.appendChild(statusSymbol);
-		tableBodyRowStatus.appendChild(tableBodyRowStatusData);
-
-		// BOOK BODY Remove "book" button SECTION
-		const tableBodyRowTrash = document.createElement("tr");
-		tableBodyRowTrash.classList("book-body-row-trash");
-		tableBody.appendChild(tableBodyRowTrash);
-
+		// Remove "book" button
 		const deleteSymbol = document.createElement("button");
 		deleteSymbol.classList.add("trash");
 		deleteSymbol.innerText = "X";
-
-		const tableBodyRowStatusTrash = document.createElement("td");
-		tableBodyRowStatusTrash.appendChild(deleteSymbol);
-		tableBodyRowTrash.appendChild(tableBodyRowStatusTrash);
+		const bookDelete = document.createElement("td");
+		bookDelete.appendChild(deleteSymbol);
+		book.appendChild(bookDelete);
 	});
 }
 
