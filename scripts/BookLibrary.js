@@ -57,7 +57,7 @@ function reDraw() {
 	});
 }
 
-function addBook(book = new Book("RNG book", "John Doe", Math.round(Math.random() * 1337))) {
-	bookLibrary.push(book);
+function addBook(name = "RNG book", author = "John Doe", pageCount = Math.round(Math.random() * 1337), read) {
+	bookLibrary.push(new Book(name, author, pageCount, read));
 	reDraw();
 }

@@ -73,20 +73,20 @@
 				<div class="modal-content">
 					<div class="add-new-book-form">
 						<a class="close">&times;</a>
-						<form action="/">
+						<form id="bookForm">
 							<h2>Add New Book</h2>
 							<div class="form-input">
-								<input type="text" name="author" placeholder="Author" />
 								<input type="text" name="title" placeholder="Book Title" />
+								<input type="text" name="author" placeholder="Author" />
 								<input type="number" name="pages" placeholder="Number Of Pages" />
 								<label for="read">Have you read this book</label>
 								<select name="read" id="read">
-									<option value="yes">Yes</option>
-									<option value="no">No</option>
+									<option value="false">No</option>
+									<option value="true">Yes</option>
 								</select>
 							</div>
-							<button type="submit" href="/">Submit</button>
-							<button type="clear" href="/">Clear</button>
+							<button type="submit">Submit</button>
+							<button type="reset">Clear</button>
 						</form>
 					</div>
 				</div>
