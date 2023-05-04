@@ -1,22 +1,15 @@
-let modalBtns = [...document.querySelectorAll(".add-book-btn")];
-modalBtns.forEach(function (btn) {
-	btn.onclick = function () {
-		let modal = btn.getAttribute("data-modal");
-		document.getElementById(modal).style.display = "block";
-	};
-});
-let closeBtns = [...document.querySelectorAll(".close")];
-closeBtns.forEach(function (btn) {
-	btn.onclick = function () {
-		let modal = btn.closest(".modal");
-		modal.style.display = "none";
-	};
-});
-window.onclick = function (event) {
-	if (event.target.className === "modal") {
-		event.target.style.display = "none";
-	}
-};
+const modal = document.querySelector('#modal')
+const openModal = document.querySelector('.open-button')
+const closeModal = document.querySelector('.close-button')
+
+openModal.addEventListener('click', () => {
+    modal.showModal();
+})
+
+closeModal.addEventListener('click' , () => {
+    modal.close();
+})
+
 
 function submitBook(event) {
 	event.preventDefault();

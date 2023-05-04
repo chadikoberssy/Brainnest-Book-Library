@@ -1,40 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="style.css" />
-	<script src="./scripts/BookLibrary.js" defer></script>
-	<script src="./scripts/pop-up.js" defer></script>
-	<title>Library app</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <script src="./scripts/pop-up.js" defer></script>
+    <script src="./scripts/BookLibrary.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Document</title>
 </head>
+<body class="d-flex min-vh-100 flex-column"  >
+    <div class="container p-3 d-flex flex-column h-100 mx-auto text-center">
+        <header class="mb-auto">
+            <h3 class="masthead-brand"><i class="nes-icon coin"></i>Yoshi's Library<i class="nes-icon coin"></i></h3>
+    </header>
+    <main>
+    <section role="main" class="nes-container with-title is-centered" >
+        <h1 class="title"><i class="nes-icon is-small heart"></i> Welcome To The Library<i class="nes-icon is-small heart"></i></h1>
+        <p>If you wish to add a book to the ever growing collection please click below!</p>
+        <button type="button" class="nes-btn is-primary open-button">Add A Book</button>
+    </section>
+    <section class="container-sm p-5">
+        <dialog class=" nes-dialog is-rounded is-centered" id="modal">
+            <form id="bookForm" action="/">
+                <h2>Add New Book</h2> 
+                <div class="form-input">
+                    <div class=" row mb-3">
+                  <input type="text" name="author" placeholder="Author" />
+                    </div>
+                    <div class=" row mb-3">
+                  <input type="text" name="title" placeholder="Book Title" />
+                  </div>
+                  <div class=" row mb-3">
+                  <input type="number" name="pages" placeholder="Pages" />
+                  </div>
+                  <p>Have you read this book?</p>
+                  <label>
+                    <input type="radio" class="nes-radio" value="true" name="read" checked  />
+                    <span>Yes</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="nes-radio" value="false" name="unread" />
+                    <span>No</span>
+                  </label>
+                  <div class="mb-3">
+                <button type="submit" class="nes-btn is-success" >Submit</button>
+                
+                <button type="clear" class= "nes-btn is-normal" >Clear</button>
 
-<body>
-	<div class="grid-container">
-
-		<header>
-			<h1>For the love of...Books</h1>
-		</header>
-
-		<aside class="sidebar">
-			<h3>Welcome to our online library!</h3>
-			<button class="add-book-btn" data-modal="modalOne">Add a Book</button>
-		</aside>
-
-		<main class="main">
-
-			<section class="main-header">
-				<h2>Online library log</h2>
-				<div class="main-header-counts">
-					<p>Total book count: <span>0</span></p>
-					<p>Books read: <span>0</span></p>
-					<p>Books need to read: <span>0</span></p>
-				</div>
-			</section>
-
-			<table id="bookshelf">
+                <button type="button" class="nes-btn is-error close-button">Close</button>
+                </div>
+                </div>
+      
+              </form>
+        </dialog>
+    </section>
+    <section class="container">
+		<div class="table-responsive">
+			<table class="table" id="bookshelf">
 				<thead>
 					<tr>
 						<th>Title</th>
@@ -68,36 +97,15 @@
 					</tr>
 				</tbody>
 			</table>
+		</div>
+      
 
-			<section id="modalOne" class="modal">
-				<div class="modal-content">
-					<div class="add-new-book-form">
-						<a class="close">&times;</a>
-						<form id="bookForm">
-							<h2>Add New Book</h2>
-							<div class="form-input">
-								<input type="text" name="title" placeholder="Book Title" />
-								<input type="text" name="author" placeholder="Author" />
-								<input type="number" name="pages" placeholder="Number Of Pages" />
-								<label for="read">Have you read this book</label>
-								<select name="read" id="read">
-									<option value="false">No</option>
-									<option value="true">Yes</option>
-								</select>
-							</div>
-							<button type="submit">Submit</button>
-							<button type="reset">Clear</button>
-						</form>
-					</div>
-				</div>
-			</section>
-		</main>
+    </section>
+    </main>
+   <footer class="footer mt-auto py-3">
+    <p>Website made with love <i class="nes-icon is-small heart"></i>, by <a target="_blank" href="https://github.com"></a></p>
+ </footer>
 
-		<footer class="footer">
-			<div class="footer__copyright">&copy; 2023 Brainnest Team Library</div>
-			<div class="footer__signature">Premek, Maria, Chadi and Ben</div>
-		</footer>
-	</div>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </html>
