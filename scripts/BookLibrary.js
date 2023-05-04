@@ -40,7 +40,8 @@ function reDraw() {
 		book.appendChild(bookPages);
 
 		const statusToggle = document.createElement("button");
-		statusToggle.classList.add((b.read ? "" : "not-") + "read");
+	
+		statusToggle.classList.add((b.read ? "" : "not-") + "read", "nes-btn", "is-success");
 		statusToggle.innerText = (b.read ? "Did" : "Did NOT") + " read";
 		statusToggle.onclick = () => { bookLibrary[i].toggleRead(); reDraw(); };
 		const bookStatus = document.createElement("td");
@@ -48,7 +49,7 @@ function reDraw() {
 		book.appendChild(bookStatus);
 
 		const deleteSymbol = document.createElement("button");
-		deleteSymbol.classList.add("trash");
+		deleteSymbol.classList.add("trash","nes-btn","is-error")
 		deleteSymbol.innerText = "X";
 		deleteSymbol.onclick = () => { bookLibrary.splice(i, 1); reDraw(); };
 		const bookDelete = document.createElement("td");

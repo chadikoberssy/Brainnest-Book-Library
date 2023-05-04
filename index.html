@@ -15,19 +15,19 @@
 
     <title>Document</title>
 </head>
-<body class="text-center full-body" >
-    <div class="container p-3 d-flex flex-column h-100 mx-auto">
+<body class="d-flex min-vh-100 flex-column"  >
+    <div class="container p-3 d-flex flex-column h-100 mx-auto text-center">
         <header class="mb-auto">
             <h3 class="masthead-brand"><i class="nes-icon coin"></i>Yoshi's Library<i class="nes-icon coin"></i></h3>
     </header>
     <main>
-    <section role="main" class="nes-container with-title is-centered p-5">
+    <section role="main" class="nes-container with-title is-centered" >
         <h1 class="title"><i class="nes-icon is-small heart"></i> Welcome To The Library<i class="nes-icon is-small heart"></i></h1>
         <p>If you wish to add a book to the ever growing collection please click below!</p>
         <button type="button" class="nes-btn is-primary open-button">Add A Book</button>
     </section>
-    <section class="p-5">
-        <dialog class="container-sm nes-dialog is-rounded is-centered" id="modal">
+    <section class="container-sm p-5">
+        <dialog class=" nes-dialog is-rounded is-centered" id="modal">
             <form id="bookForm" action="/">
                 <h2>Add New Book</h2> 
                 <div class="form-input">
@@ -42,17 +42,17 @@
                   </div>
                   <p>Have you read this book?</p>
                   <label>
-                    <input type="radio" class="nes-radio" value="true" name="read" checked />
+                    <input type="radio" class="nes-radio" value="true" name="read" checked  />
                     <span>Yes</span>
                   </label>
                   <label>
-                    <input type="radio" class="nes-radio" value="false" name="not-read" />
+                    <input type="radio" class="nes-radio" value="false" name="unread" />
                     <span>No</span>
                   </label>
                   <div class="mb-3">
-                <button type=" submit" class="nes-btn is-success" >Submit</button>
+                <button type="submit" class="nes-btn is-success" >Submit</button>
                 
-                <button type=" clear " class= "nes-btn is-normal" >Clear</button>
+                <button type="clear" class= "nes-btn is-normal" >Clear</button>
 
                 <button type="button" class="nes-btn is-error close-button">Close</button>
                 </div>
@@ -62,7 +62,8 @@
         </dialog>
     </section>
     <section class="container">
-      <table id="bookshelf">
+		<div class="table-responsive">
+			<table class="table" id="bookshelf">
 				<thead>
 					<tr>
 						<th>Title</th>
@@ -96,13 +97,15 @@
 					</tr>
 				</tbody>
 			</table>
+		</div>
+      
 
     </section>
     </main>
-   <footer class="mt-auto">
+   <footer class="footer mt-auto py-3">
     <p>Website made with love <i class="nes-icon is-small heart"></i>, by <a target="_blank" href="https://github.com"></a></p>
  </footer>
-    </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </html>
