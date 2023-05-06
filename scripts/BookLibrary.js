@@ -62,3 +62,6 @@ function addBook(name = "RNG book", author = "John Doe", pageCount = Math.round(
 	bookLibrary.push(new Book(name, author, pageCount, read));
 	reDraw();
 }
+
+
+module.exports = bookLibrary;
