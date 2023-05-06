@@ -24,7 +24,7 @@ function reDraw() {
 
 	bookLibrary.forEach((b, i) => {
 		const book = document.createElement("tr");
-		book.classList.add("book");
+		book.classList.add("book", "align-middle");
 		bookShelf.appendChild(book);
 
 		const bookTitle = document.createElement("td");
@@ -41,7 +41,7 @@ function reDraw() {
 
 		const statusToggle = document.createElement("button");
 	
-		statusToggle.classList.add((b.read ? "" : "not-") + "read", "nes-btn", "is-success");
+		statusToggle.classList.add((b.read ? ""  : "not-" ) + "read", "nes-btn", "is-success");
 		statusToggle.innerText = (b.read ? "Did" : "Did NOT") + " read";
 		statusToggle.onclick = () => { bookLibrary[i].toggleRead(); reDraw(); };
 		const bookStatus = document.createElement("td");
