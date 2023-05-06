@@ -15,7 +15,7 @@
 
     <title>Document</title>
 </head>
-<body class="d-flex min-vh-100 flex-column"  >
+<body class="d-flex flex-column vh-100">
     <div class="container p-3 d-flex flex-column h-100 mx-auto text-center">
         <header class="mb-auto">
             <h3 class="masthead-brand"><i class="nes-icon coin"></i>Yoshi's Library<i class="nes-icon coin"></i></h3>
@@ -61,7 +61,7 @@
               </form>
         </dialog>
     </section>
-    <section class="container">
+    <section id= "library"  class="container">
 		<div class="table-responsive">
 			<table class="table" id="bookshelf">
 				<thead>
@@ -78,34 +78,33 @@
 						<td>RNG book</td>
 						<td>John Doe</td>
 						<td>493</td>
-						<td><button class="not-read">Did NOT read</button></td>
-						<td><button class="trash">X</button></td>
+						<td><button class="not-read nes-btn is-primary">Did NOT read</button></td>
+						<td><button class="trash nes-btn is-error">X</button></td>
 					</tr>
 					<tr class="book">
 						<td>RNG book</td>
 						<td>John Doe</td>
 						<td>358</td>
-						<td><button class="read">Did read</button></td>
-						<td><button class="trash">X</button></td>
+						<td><button class="read nes-btn is-primary">Did read</button></td>
+						<td><button class="trash nes-btn is-error">X</button></td>
 					</tr>
 					<tr class="book">
 						<td>Test book</td>
 						<td>Tester boi</td>
 						<td>569</td>
-						<td><button class="not-read">Did NOT read</button></td>
-						<td><button class="trash">X</button></td>
+						<td><button class="not-read nes-btn is-primary">Did NOT read</button></td>
+						<td><button class="trash nes-btn is-error">X</button></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-      
-
     </section>
     </main>
-   <footer class="footer mt-auto py-3">
-    <p>Website made with love <i class="nes-icon is-small heart"></i>, by <a target="_blank" href="https://github.com"></a></p>
- </footer>
-
+    <footer class="footer mt-auto py-3 bg-transparent">
+      <div class="container">
+        <span class="text-dark"><i class="nes-icon is-small star"></i> Maria <i class="nes-icon is-small star"></i> Premek <i class="nes-icon is-small star"></i> Chadi <i class="nes-icon is-small star"></i> Ben <i class="nes-icon is-small star"></i></span>
+      </div>
+    </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </html>
